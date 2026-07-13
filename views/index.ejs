@@ -64,6 +64,17 @@
       <% }) %>
     </div>
     <% } %>
+
+    <% if (content.certifications && content.certifications.length) { %>
+    <div class="side-block">
+      <h3>Certifications</h3>
+      <% content.certifications.forEach(function(c) { %>
+        <div class="side-edu">
+          <div class="deg"><%= c.name %></div>
+        </div>
+      <% }) %>
+    </div>
+    <% } %>
   </aside>
 
   <main>

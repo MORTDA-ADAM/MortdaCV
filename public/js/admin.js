@@ -50,6 +50,10 @@
         { key: "role", label: "Role", type: "text" },
       ],
     },
+    certifications: {
+      containerId: "certifications-list",
+      fields: [{ key: "name", label: "Certification name", type: "text" }],
+    },
   };
 
   function emptyRow(listKey) {

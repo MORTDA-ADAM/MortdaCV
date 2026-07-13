@@ -1,8 +1,8 @@
 {
   "profile": {
     "name": "Mortda Adam",
-    "title": "Computer Science Researcher & Software Architect",
-    "bio": "As a Computer Science researcher and software architect, I bridge the gap between theoretical breakthroughs and industrial applications to solve global challenges. Leveraging expertise in AI and programming languages, I translate complex research into scalable, real-world solutions. My work focuses on leading collaborative projects that harness emerging technologies to improve quality of life and deliver measurable human impact.",
+    "title": "Software Development | Computer Vision & ML Implementation | Lecturing Experience",
+    "bio": "I hold a PhD in Computer Engineering alongside 12 years of university lecturing experience. I combine advanced academic research with practical software development, working as a university educator and a Full-Stack Web Developer/Software Engineer. My core expertise spans computer vision and deep learning (optimizing complex object detection models), full-stack software engineering (building scalable, end-to-end web applications and engineering systems), and academic leadership (directing research, supervising and mentoring students, and curriculum delivery). I am always open to new research collaborations, software development projects, and academic opportunities.",
     "email": "mortda_ahmed@hotmail.com",
     "phone": "+27812840863",
     "linkedin": "https://www.linkedin.com/in/mortda-adam",
@@ -18,7 +18,7 @@
     {
       "degree": "MSc, Computer Science",
       "org": "Sudan University of Science and Technology (SUST), Sudan",
-      "period": "Completed 05/2017"
+      "period": "Completed 12/2017"
     },
     {
       "degree": "BSc, Computer Science",
@@ -28,9 +28,55 @@
   ],
   "experience": [
     {
+      "role": "Lecturer (Westville)",
+      "org": "IIE Emeris, South Africa",
+      "period": "July 2026 – Present",
+      "bullets": [
+        "Lecturing in Artificial Intelligence (AI) and UX/UI at Honours level"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Supervisor (Durban)",
+      "org": "IIE Emeris, South Africa",
+      "period": "March 2026 – Present",
+      "bullets": [
+        "Supervise postgraduate students in ICT research",
+        "Mentor students conducting research in AI and Data Analysis"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Lecturer (PMB)",
+      "org": "IIE Emeris, South Africa",
+      "period": "January 2026 – July 2026",
+      "bullets": [
+        "Lecturer and researcher in Information and Communication Technology (ICT)",
+        "Advanced Programming (C#/.NET): Design Patterns and Software Architecture for Enterprise Systems"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Programming Lecturer (Part Time)",
+      "org": "Newbridge Graduate Institute (NGI), South Africa",
+      "period": "July 2024 – Present",
+      "bullets": [
+        "Lecturing and developing course materials",
+        "Design and evaluate assessments",
+        "Supervised student projects",
+        "Guide lab demonstrators"
+      ],
+      "modules": [
+        "Programming in C/C++, Python and JavaScript",
+        "Web Development (HTML, CSS)",
+        "Azure Fundamentals",
+        "Azure Data Associations"
+      ]
+    },
+    {
       "role": "Lecturer (Part Time)",
       "org": "University of KwaZulu-Natal (UKZN), South Africa",
-      "period": "Current",
+      "period": "July 2023 – December 2025",
       "bullets": [
         "Lecturing and developing course materials",
         "Design and evaluate assessments",
@@ -45,53 +91,61 @@
       ]
     },
     {
-      "role": "Tutor and Lab Demonstrator (Part Time)",
+      "role": "Tutor (Part Time)",
       "org": "University of KwaZulu-Natal (UKZN), South Africa",
-      "period": "",
+      "period": "July 2022 – June 2023",
       "bullets": [
         "Provided technical support for lab sessions and evaluated student performance"
       ],
       "modules": [
-        "Computer Methods 2 (Java)",
-        "Computer Methods 1 (C)",
-        "Electronics Principles"
+        "Computer Methods 2",
+        "Communication for Engineers",
+        "Electronic Design 1"
       ]
     },
     {
-      "role": "Lecturer (Part Time)",
-      "org": "IIE Emeris, South Africa",
-      "period": "",
+      "role": "Visiting Lecturer",
+      "org": "University of Al Fashir, Sudan",
+      "period": "September 2021 – October 2021",
       "bullets": [
-        "Lecturing and developing course materials",
-        "Design and evaluate assessments",
-        "Supervised student projects",
-        "Guide lab demonstrators"
+        "Lectured Analysis and Design of Algorithms",
+        "Lectured Compiler Design"
       ],
-      "modules": [
-        "Software Programming .NET (ASP - C#)",
-        "Introduction to Research in ICT"
-      ]
+      "modules": []
     },
     {
-      "role": "Programming Lecturer (Part Time)",
-      "org": "Newbridge Graduate Institute (NGI), South Africa",
-      "period": "",
+      "role": "Visiting Lecturer",
+      "org": "University of Nyala, Sudan",
+      "period": "July 2021 – September 2021",
       "bullets": [
-        "Lecturing and developing course materials",
-        "Design and evaluate assessments",
-        "Supervised student projects",
-        "Guide lab demonstrators"
+        "Lectured Web Development and Engineering",
+        "Lectured Software Engineering"
       ],
-      "modules": [
-        "C / C++, Python, JavaScript",
-        "Web Development (HTML, CSS)",
-        "Cloud Computing (Azure)"
-      ]
+      "modules": []
+    },
+    {
+      "role": "Visiting Lecturer",
+      "org": "University of Nyala, Sudan",
+      "period": "January 2021 – March 2021",
+      "bullets": [
+        "Lectured Computer Graphics",
+        "Lectured Computational Physics"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Laboratory Demonstrator",
+      "org": "University of KwaZulu-Natal (UKZN), South Africa",
+      "period": "February 2020 – November 2020",
+      "bullets": [
+        "Provided lab support and technical assistance to students"
+      ],
+      "modules": []
     },
     {
       "role": "Head of Computer Science Department (Full Time)",
       "org": "University of Zalingei, Sudan",
-      "period": "",
+      "period": "July 2018 – October 2019",
       "bullets": [
         "Academic and curriculum development",
         "Supervised technical resources",
@@ -100,9 +154,9 @@
       "modules": []
     },
     {
-      "role": "Lecturer (Full Time)",
+      "role": "Computer Science Lecturer (Full Time)",
       "org": "University of Zalingei, Sudan",
-      "period": "",
+      "period": "December 2014 – August 2019",
       "bullets": [
         "Lectured and assessed C Programming, Web Development (CSS3, HTML5, JavaScript, PHP), Operating Systems, Data Structures & Algorithms, Java, and Database modules",
         "Supervised student projects",
@@ -111,23 +165,23 @@
       "modules": []
     },
     {
-      "role": "Web Developer and Data Management (Full Time)",
+      "role": "Teaching Assistant (Full Time)",
       "org": "University of Zalingei, Sudan",
-      "period": "",
+      "period": "December 2014 – December 2017",
       "bullets": [
-        "Website development and requirement engineering",
-        "Data management",
-        "Mail server administration"
+        "Assisted students in programming courses and software engineering",
+        "Provided technical support for lab sessions and evaluated student performance"
       ],
       "modules": []
     },
     {
-      "role": "Teaching Assistant (Full Time)",
+      "role": "Web Developer and Data Management (Full Time)",
       "org": "University of Zalingei, Sudan",
-      "period": "",
+      "period": "October 2014 – December 2019",
       "bullets": [
-        "Assisted students in programming courses and software engineering",
-        "Provided technical support for lab sessions and evaluated student performance"
+        "Website development and requirement engineering",
+        "Data management",
+        "Mail server administration"
       ],
       "modules": []
     }
@@ -202,7 +256,8 @@
       "Deep Learning",
       "Computer Vision",
       "Big Data",
-      "Azure"
+      "Azure",
+      "Electronic Circuit Design"
     ],
     "soft": [
       "Problem-Solving",
@@ -210,7 +265,9 @@
       "Communication",
       "Team Collaboration",
       "Multi-tasking",
-      "Observation"
+      "Observation",
+      "Critical Thinking",
+      "Proposal Writing"
     ]
   },
   "conferences": [
@@ -248,5 +305,12 @@
       "name": "IITPSA",
       "role": "Member"
     }
+  ],
+  "certifications": [
+    { "name": "GIS Application Certificate (GISAppCert)" },
+    { "name": "Evaluation and Measurement" },
+    { "name": "Systems and Methods of University Teaching" },
+    { "name": "Application of Instructional Technology in University Teaching" },
+    { "name": "Basics of Scientific Research" }
   ]
 }

@@ -290,6 +290,9 @@ function sanitizeContent(incoming) {
       name: clamp(b?.name, 100),
       role: clamp(b?.role, 100),
     })),
+    certifications: (Array.isArray(incoming.certifications) ? incoming.certifications : []).slice(0, 30).map((c) => ({
+      name: clamp(c?.name, 200),
+    })),
   };
 
   return { ok: true, data };
