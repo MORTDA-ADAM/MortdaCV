@@ -13,6 +13,7 @@ const multer = require("multer");
 const { body, validationResult } = require("express-validator");
 
 const { readContent, writeContent } = require("./lib/store");
+const { UPLOADS_DIR, SESSIONS_DIR, seedIfEmpty } = require("./lib/paths");
 const { requireAuth } = require("./middleware/auth");
 const { attachCsrfToken, verifyCsrfToken, csrfTokenIsValid } = require("./middleware/csrf");
 
@@ -23,6 +24,8 @@ if (missing.length) {
   console.error("Copy .env.example to .env and fill it in (see README.md).");
   process.exit(1);
 }
+
+seedIfEmpty();
 
 const app = express();
 const isProd = process.env.NODE_ENV === "production";
@@ -55,12 +58,9 @@ app.use(
 app.use(express.urlencoded({ extended: false, limit: "200kb" }));
 app.use(express.json({ limit: "512kb" }));
 
-const sessionsDir = path.join(__dirname, "data", "sessions");
-fs.mkdirSync(sessionsDir, { recursive: true });
-
 app.use(
   session({
-    store: new FileStore({ path: sessionsDir, logFn: () => {} }),
+    store: new FileStore({ path: SESSIONS_DIR, logFn: () => {} }),
     name: "cv_admin_sid",
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -74,7 +74,7 @@ app.use(
   })
 );
 
-app.use("/uploads", express.static(path.join(__dirname, "public", "uploads")));
+app.use("/uploads", express.static(UPLOADS_DIR));
 app.use("/css", express.static(path.join(__dirname, "public", "css")));
 app.use("/js", express.static(path.join(__dirname, "public", "js")));
 
@@ -174,10 +174,10 @@ app.post("/admin/api/content", requireAuth, verifyCsrfToken, contentValidators, 
 
 const photoUpload = multer({
   storage: multer.diskStorage({
-    destination: path.join(__dirname, "public", "uploads"),
+    destination: UPLOADS_DIR,
     filename: (req, file, cb) => {
       const ext = { "image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp" }[file.mimetype];
-      cb(null, `profile.${ext}`);
+      cb(null, `profile${ext}`);
     },
   }),
   limits: { fileSize: 5 * 1024 * 1024, files: 1 },
@@ -204,10 +204,9 @@ app.post("/admin/api/photo", requireAuth, (req, res) => {
       return res.status(400).json({ error: "No file uploaded." });
     }
 
-    const uploadsDir = path.join(__dirname, "public", "uploads");
-    fs.readdirSync(uploadsDir)
+    fs.readdirSync(UPLOADS_DIR)
       .filter((f) => f.startsWith("profile.") && f !== req.file.filename)
-      .forEach((f) => fs.unlinkSync(path.join(uploadsDir, f)));
+      .forEach((f) => fs.unlinkSync(path.join(UPLOADS_DIR, f)));
 
     const current = readContent();
     const publicPath = `/uploads/${req.file.filename}?v=${Date.now()}`;
