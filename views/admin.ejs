@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Edit CV</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body data-csrf="<%= csrfToken %>">
+<div class="admin-shell">
+  <div class="admin-header">
+    <h1>Edit CV Content</h1>
+    <div class="header-actions">
+      <a class="btn secondary" href="/" target="_blank" rel="noopener">View live site</a>
+      <form method="POST" action="/admin/logout" class="inline-form">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="btn danger-outline" type="submit">Log out</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="banner"></div>
+
+  <div class="admin-section">
+    <h2>Profile Photo</h2>
+    <div class="photo-row">
+      <img id="photo-preview" src="<%= content.profile.photo %>" alt="Current photo">
+      <div>
+        <input type="file" id="photo-file" accept="image/jpeg,image/png,image/webp">
+        <div class="tag-input-hint">JPEG, PNG, or WebP. Max 5MB.</div>
+      </div>
+      <button class="btn" id="photo-upload-btn" type="button">Upload photo</button>
+    </div>
+  </div>
+
+  <form id="cv-form">
+    <div class="admin-section">
+      <h2>Profile</h2>
+      <div class="field"><label>Full name</label><input name="name" id="p-name"></div>
+      <div class="field"><label>Title</label><input name="title" id="p-title"></div>
+      <div class="field"><label>Bio</label><textarea name="bio" id="p-bio" rows="4"></textarea></div>
+      <div class="field"><label>Email</label><input name="email" id="p-email" type="email"></div>
+      <div class="field"><label>Phone</label><input name="phone" id="p-phone"></div>
+      <div class="field"><label>LinkedIn URL</label><input name="linkedin" id="p-linkedin"></div>
+      <div class="field"><label>Location</label><input name="location" id="p-location"></div>
+    </div>
+
+    <div class="admin-section">
+      <h2>Education</h2>
+      <div id="education-list"></div>
+      <button type="button" class="add-row-btn" data-add="education">+ Add education</button>
+    </div>
+
+    <div class="admin-section">
+      <h2>Work Experience</h2>
+      <div id="experience-list"></div>
+      <button type="button" class="add-row-btn" data-add="experience">+ Add role</button>
+    </div>
+
+    <div class="admin-section">
+      <h2>Publications &amp; Research</h2>
+      <div id="publications-list"></div>
+      <button type="button" class="add-row-btn" data-add="publications">+ Add publication</button>
+    </div>
+
+    <div class="admin-section">
+      <h2>Projects</h2>
+      <div id="projects-list"></div>
+      <button type="button" class="add-row-btn" data-add="projects">+ Add project</button>
+    </div>
+
+    <div class="admin-section">
+      <h2>Skills</h2>
+      <div class="field">
+        <label>Technical skills (comma-separated)</label>
+        <input id="skills-technical">
+      </div>
+      <div class="field">
+        <label>Soft skills (comma-separated)</label>
+        <input id="skills-soft">
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h2>Conferences &amp; Participation</h2>
+      <div id="conferences-list"></div>
+      <button type="button" class="add-row-btn" data-add="conferences">+ Add conference</button>
+    </div>
+
+    <div class="admin-section">
+      <h2>Professional Body</h2>
+      <div id="professionalBody-list"></div>
+      <button type="button" class="add-row-btn" data-add="professionalBody">+ Add membership</button>
+    </div>
+
+    <button class="btn" type="submit">Save all changes</button>
+  </form>
+</div>
+
+<script type="application/json" id="initial-content"><%- JSON.stringify(content).replace(/</g, "\\u003c") %></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

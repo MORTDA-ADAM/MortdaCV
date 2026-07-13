@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= content.profile.name %> — <%= content.profile.title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside>
+    <img class="avatar" src="<%= content.profile.photo %>" alt="<%= content.profile.name %>">
+    <h1><%= content.profile.name %></h1>
+    <div class="title"><%= content.profile.title %></div>
+
+    <div class="side-contact">
+      <% if (content.profile.email) { %><a href="mailto:<%= content.profile.email %>"><span class="ico">&#9993;</span><%= content.profile.email %></a><% } %>
+      <% if (content.profile.phone) { %><a href="tel:<%= content.profile.phone %>"><span class="ico">&#9742;</span><%= content.profile.phone %></a><% } %>
+      <% if (content.profile.linkedin) { %><a href="<%= content.profile.linkedin %>" target="_blank" rel="noopener"><span class="ico">in</span>LinkedIn</a><% } %>
+      <% if (content.profile.location) { %><span><span class="ico">&#8982;</span><%= content.profile.location %></span><% } %>
+    </div>
+
+    <nav class="sidenav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <% if (content.education.length) { %>
+    <div class="side-block">
+      <h3>Education</h3>
+      <% content.education.forEach(function(e) { %>
+        <div class="side-edu">
+          <div class="deg"><%= e.degree %></div>
+          <div class="org"><%= e.org %></div>
+          <div class="yr"><%= e.period %></div>
+        </div>
+      <% }) %>
+    </div>
+    <% } %>
+
+    <% if (content.skills.technical.length || content.skills.soft.length) { %>
+    <div class="side-block">
+      <h3>Skills</h3>
+      <div class="skill-tags">
+        <% content.skills.technical.forEach(function(s) { %><span><%= s %></span><% }) %>
+      </div>
+    </div>
+    <% } %>
+
+    <% if (content.professionalBody.length) { %>
+    <div class="side-block">
+      <h3>Professional Body</h3>
+      <% content.professionalBody.forEach(function(b) { %>
+        <div class="side-edu">
+          <div class="deg"><%= b.name %></div>
+          <div class="org"><%= b.role %></div>
+        </div>
+      <% }) %>
+    </div>
+    <% } %>
+  </aside>
+
+  <main>
+    <% if (content.profile.bio) { %>
+    <section id="about">
+      <h2>About</h2>
+      <p class="lead"><%= content.profile.bio %></p>
+    </section>
+    <% } %>
+
+    <% if (content.experience.length) { %>
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        <% content.experience.forEach(function(job) { %>
+          <div class="entry">
+            <div class="card">
+              <div class="entry-head">
+                <span class="role"><%= job.role %></span>
+                <% if (job.period) { %><span class="period"><%= job.period %></span><% } %>
+              </div>
+              <div class="org"><%= job.org %></div>
+              <% if (job.bullets.length) { %>
+              <ul>
+                <% job.bullets.forEach(function(b) { %><li><%= b %></li><% }) %>
+              </ul>
+              <% } %>
+              <% if (job.modules.length) { %>
+              <div class="modules">
+                <% job.modules.forEach(function(m) { %><span><%= m %></span><% }) %>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if (content.publications.length) { %>
+    <section id="publications">
+      <h2>Publications &amp; Research</h2>
+      <div class="pub-grid">
+        <% content.publications.forEach(function(p) { %>
+          <div class="pub">
+            <div class="pub-title"><%= p.title %><% if (p.badge) { %> <span class="badge"><%= p.badge %></span><% } %></div>
+            <div class="pub-meta">
+              <%= p.meta %>
+              <% if (p.doiUrl) { %> &middot; DOI: <a href="<%= p.doiUrl %>" target="_blank" rel="noopener"><%= p.doiLabel %></a><% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if (content.projects.length) { %>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <% content.projects.forEach(function(p) { %><div class="project-card"><%= p.title %></div><% }) %>
+      </div>
+    </section>
+    <% } %>
+
+    <% if (content.conferences.length) { %>
+    <section id="conferences">
+      <h2>Conferences &amp; Participation</h2>
+      <div class="conf-grid">
+        <% content.conferences.forEach(function(c) { %>
+          <div class="conf-item"><span><%= c.name %></span><span class="y"><%= c.year %></span></div>
+        <% }) %>
+      </div>
+    </section>
+    <% } %>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-cta">
+        <p class="lead no-margin">Open to research collaborations, lecturing opportunities, and software architecture consulting.</p>
+        <div class="contact-row">
+          <% if (content.profile.email) { %><a href="mailto:<%= content.profile.email %>"><%= content.profile.email %></a><% } %>
+          <% if (content.profile.phone) { %><a href="tel:<%= content.profile.phone %>"><%= content.profile.phone %></a><% } %>
+          <% if (content.profile.linkedin) { %><a href="<%= content.profile.linkedin %>" target="_blank" rel="noopener">LinkedIn</a><% } %>
+        </div>
+      </div>
+    </section>
+
+    <footer><%= content.profile.name %> &middot; <%= content.profile.location %></footer>
+  </main>
+
+</div>
+</body>
+</html>

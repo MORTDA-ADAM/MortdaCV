@@ -1,0 +1,252 @@
+{
+  "profile": {
+    "name": "Mortda Adam",
+    "title": "Computer Science Researcher & Software Architect",
+    "bio": "As a Computer Science researcher and software architect, I bridge the gap between theoretical breakthroughs and industrial applications to solve global challenges. Leveraging expertise in AI and programming languages, I translate complex research into scalable, real-world solutions. My work focuses on leading collaborative projects that harness emerging technologies to improve quality of life and deliver measurable human impact.",
+    "email": "mortda_ahmed@hotmail.com",
+    "phone": "+27812840863",
+    "linkedin": "https://www.linkedin.com/in/mortda-adam",
+    "location": "Durban, KZN, South Africa",
+    "photo": "/uploads/profile..png?v=1783966770068"
+  },
+  "education": [
+    {
+      "degree": "Ph.D, Computer Engineering",
+      "org": "University of KwaZulu-Natal (UKZN), South Africa",
+      "period": "Completed 03/2026"
+    },
+    {
+      "degree": "MSc, Computer Science",
+      "org": "Sudan University of Science and Technology (SUST), Sudan",
+      "period": "Completed 05/2017"
+    },
+    {
+      "degree": "BSc, Computer Science",
+      "org": "Omdurman Islamic University (OIU), Sudan",
+      "period": "Completed 12/2012"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Lecturer (Part Time)",
+      "org": "University of KwaZulu-Natal (UKZN), South Africa",
+      "period": "Current",
+      "bullets": [
+        "Lecturing and developing course materials",
+        "Design and evaluate assessments",
+        "Supervised student projects",
+        "Guide lab demonstrators"
+      ],
+      "modules": [
+        "Computer Engineering Design 2",
+        "Software Engineering",
+        "Applied Computer Methods (Python)",
+        "Big Data"
+      ]
+    },
+    {
+      "role": "Tutor and Lab Demonstrator (Part Time)",
+      "org": "University of KwaZulu-Natal (UKZN), South Africa",
+      "period": "",
+      "bullets": [
+        "Provided technical support for lab sessions and evaluated student performance"
+      ],
+      "modules": [
+        "Computer Methods 2 (Java)",
+        "Computer Methods 1 (C)",
+        "Electronics Principles"
+      ]
+    },
+    {
+      "role": "Lecturer (Part Time)",
+      "org": "IIE Emeris, South Africa",
+      "period": "",
+      "bullets": [
+        "Lecturing and developing course materials",
+        "Design and evaluate assessments",
+        "Supervised student projects",
+        "Guide lab demonstrators"
+      ],
+      "modules": [
+        "Software Programming .NET (ASP - C#)",
+        "Introduction to Research in ICT"
+      ]
+    },
+    {
+      "role": "Programming Lecturer (Part Time)",
+      "org": "Newbridge Graduate Institute (NGI), South Africa",
+      "period": "",
+      "bullets": [
+        "Lecturing and developing course materials",
+        "Design and evaluate assessments",
+        "Supervised student projects",
+        "Guide lab demonstrators"
+      ],
+      "modules": [
+        "C / C++, Python, JavaScript",
+        "Web Development (HTML, CSS)",
+        "Cloud Computing (Azure)"
+      ]
+    },
+    {
+      "role": "Head of Computer Science Department (Full Time)",
+      "org": "University of Zalingei, Sudan",
+      "period": "",
+      "bullets": [
+        "Academic and curriculum development",
+        "Supervised technical resources",
+        "Staff and student affairs"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Lecturer (Full Time)",
+      "org": "University of Zalingei, Sudan",
+      "period": "",
+      "bullets": [
+        "Lectured and assessed C Programming, Web Development (CSS3, HTML5, JavaScript, PHP), Operating Systems, Data Structures & Algorithms, Java, and Database modules",
+        "Supervised student projects",
+        "Guided lab demonstrators"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Web Developer and Data Management (Full Time)",
+      "org": "University of Zalingei, Sudan",
+      "period": "",
+      "bullets": [
+        "Website development and requirement engineering",
+        "Data management",
+        "Mail server administration"
+      ],
+      "modules": []
+    },
+    {
+      "role": "Teaching Assistant (Full Time)",
+      "org": "University of Zalingei, Sudan",
+      "period": "",
+      "bullets": [
+        "Assisted students in programming courses and software engineering",
+        "Provided technical support for lab sessions and evaluated student performance"
+      ],
+      "modules": []
+    }
+  ],
+  "publications": [
+    {
+      "title": "Enhancing YOLOv5 for Autonomous Driving: Efficient Attention-Based Object Detection on Edge Devices",
+      "meta": "J. Imaging 2025, 11(8), 263",
+      "badge": "",
+      "doiUrl": "https://doi.org/10.20944/preprints202506.2076.v1",
+      "doiLabel": "10.20944/preprints202506.2076.v1"
+    },
+    {
+      "title": "A Survey on Image-Based Vehicle Detection Methods",
+      "meta": "World Electr. Veh. J. 2025, 16(6), 303 · Awarded by World Electric Vehicle Journal",
+      "badge": "Editor's Choice 2025",
+      "doiUrl": "https://doi.org/10.3390/wevj16060303",
+      "doiLabel": "10.3390/wevj16060303"
+    },
+    {
+      "title": "OAM: Order-Aware Attention Module for Object Detection",
+      "meta": "Submitted to IEEE Access",
+      "badge": "Under Review",
+      "doiUrl": "",
+      "doiLabel": ""
+    },
+    {
+      "title": "A Comparative Study of Attention Mechanisms and Placement Strategies in Lightweight YOLO Detectors for Autonomous Driving",
+      "meta": "Submitted to Discover Artificial Intelligence",
+      "badge": "Under Review",
+      "doiUrl": "",
+      "doiLabel": ""
+    },
+    {
+      "title": "Ph.D. Thesis — Deep Learning Approach for Object Detection on the Road for Edge Devices",
+      "meta": "University of KwaZulu-Natal (UKZN)",
+      "badge": "",
+      "doiUrl": "",
+      "doiLabel": ""
+    },
+    {
+      "title": "M.Sc. Thesis — Developing GeoInformation System for Sudan Using Google Maps Mashups",
+      "meta": "Sudan University of Science and Technology (SUST)",
+      "badge": "",
+      "doiUrl": "",
+      "doiLabel": ""
+    }
+  ],
+  "projects": [
+    {
+      "title": "Optimized YOLOv5 Model for Autonomous Driving"
+    },
+    {
+      "title": "Vehicle Detection for Parking Occupancy"
+    },
+    {
+      "title": "Sudan GeoInformatic System using Google Maps"
+    },
+    {
+      "title": "Archive System for Students' Records"
+    }
+  ],
+  "skills": {
+    "technical": [
+      "Python",
+      "Java",
+      "C / C++",
+      "JavaScript",
+      "PHP",
+      "C# / .NET",
+      "HTML5 / CSS3",
+      "Deep Learning",
+      "Computer Vision",
+      "Big Data",
+      "Azure"
+    ],
+    "soft": [
+      "Problem-Solving",
+      "Decision Making",
+      "Communication",
+      "Team Collaboration",
+      "Multi-tasking",
+      "Observation"
+    ]
+  },
+  "conferences": [
+    {
+      "name": "Deep Learning Indaba X — Cape Town",
+      "year": "2023"
+    },
+    {
+      "name": "UKZN PRIS — Durban",
+      "year": "2023"
+    },
+    {
+      "name": "Indaba X — Wits",
+      "year": "2024"
+    },
+    {
+      "name": "Indaba — Dakar, Senegal",
+      "year": "2024"
+    },
+    {
+      "name": "Indaba X — Stellenbosch",
+      "year": "2025"
+    },
+    {
+      "name": "UKZN PRIS — Durban",
+      "year": "2025"
+    },
+    {
+      "name": "IBM Workshop, Indaba X",
+      "year": "2025"
+    }
+  ],
+  "professionalBody": [
+    {
+      "name": "IITPSA",
+      "role": "Member"
+    }
+  ]
+}
