@@ -4,6 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= content.profile.name %> — <%= content.profile.title %></title>
+  <meta name="description" content="<%= metaDescription %>">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="<%= content.profile.name %> — <%= content.profile.title %>">
+  <meta property="og:description" content="<%= metaDescription %>">
+  <meta property="og:image" content="<%= baseUrl %><%= content.profile.photo %>">
+  <meta property="og:url" content="<%= baseUrl %>/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<%= content.profile.name %> — <%= content.profile.title %>">
+  <meta name="twitter:description" content="<%= metaDescription %>">
+  <meta name="twitter:image" content="<%= baseUrl %><%= content.profile.photo %>">
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>

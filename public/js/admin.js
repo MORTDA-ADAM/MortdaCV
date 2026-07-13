@@ -103,7 +103,13 @@
     removeBtn.type = "button";
     removeBtn.className = "remove-row";
     removeBtn.textContent = "Remove";
-    removeBtn.addEventListener("click", () => row.remove());
+    removeBtn.addEventListener("click", () => {
+      const firstField = row.querySelector("input, textarea");
+      const label = firstField && firstField.value.trim() ? `"${firstField.value.trim()}"` : "this entry";
+      if (confirm(`Remove ${label}? This can't be undone once you save.`)) {
+        row.remove();
+      }
+    });
     row.appendChild(removeBtn);
 
     config.fields.forEach((field) => {

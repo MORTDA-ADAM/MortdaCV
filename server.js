@@ -83,7 +83,10 @@ app.use("/js", express.static(path.join(__dirname, "public", "js")));
 
 app.get("/", (req, res) => {
   const content = readContent();
-  res.render("index", { content });
+  const baseUrl = `${req.protocol}://${req.get("host")}`;
+  const bio = content.profile.bio || "";
+  const metaDescription = bio.length > 200 ? `${bio.slice(0, 197)}...` : bio;
+  res.render("index", { content, baseUrl, metaDescription });
 });
 
 const pdfLimiter = rateLimit({
