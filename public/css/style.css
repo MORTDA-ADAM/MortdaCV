@@ -72,6 +72,11 @@ nav.sidenav a:hover { color: var(--accent); }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .skill-tags span { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; font-size: 0.76rem; }
 
+.download-pdf-btn {
+  display: block; text-align: center; width: 100%; margin-bottom: 20px;
+  padding: 10px 14px; font-size: 0.85rem; box-sizing: border-box; text-decoration: none;
+}
+
 main section { padding: 0 0 44px; scroll-margin-top: 24px; }
 main section h2 {
   font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent);

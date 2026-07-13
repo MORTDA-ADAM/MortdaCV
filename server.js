@@ -14,6 +14,7 @@ const { body, validationResult } = require("express-validator");
 
 const { readContent, writeContent } = require("./lib/store");
 const { UPLOADS_DIR, SESSIONS_DIR, seedIfEmpty } = require("./lib/paths");
+const { buildCvPdf } = require("./lib/pdf");
 const { requireAuth } = require("./middleware/auth");
 const { attachCsrfToken, verifyCsrfToken, csrfTokenIsValid } = require("./middleware/csrf");
 
@@ -83,6 +84,25 @@ app.use("/js", express.static(path.join(__dirname, "public", "js")));
 app.get("/", (req, res) => {
   const content = readContent();
   res.render("index", { content });
+});
+
+const pdfLimiter = rateLimit({
+  windowMs: 5 * 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.get("/cv.pdf", pdfLimiter, (req, res) => {
+  const content = readContent();
+  const slug = (content.profile.name || "cv").trim().replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", `attachment; filename="${slug || "cv"}-CV.pdf"`);
+
+  const doc = buildCvPdf(content);
+  doc.pipe(res);
+  doc.end();
 });
 
 // ---------- Admin auth ----------
