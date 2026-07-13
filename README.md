@@ -107,29 +107,56 @@ edits required.
   in `.env`, which is gitignored. The server refuses to start if they're
   missing.
 
-## Deploying online
+## Deployment (live on Fly.io)
 
-This is a normal Node.js app — deploy it anywhere that runs Node
-(Render, Railway, Fly.io, a VPS, etc.). Steps are the same everywhere:
+**Live site:** https://mortda-cv.fly.dev
+**Admin:** https://mortda-cv.fly.dev/admin
 
-1. Push this project to a **private** GitHub repo (don't commit `.env` —
-   it's gitignored already).
-2. On your hosting provider, set these environment variables (same names
-   as `.env`): `SESSION_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`,
-   `NODE_ENV=production`. Generate a *new* `SESSION_SECRET` for production
-   (don't reuse the local one).
-3. Make sure the platform serves over HTTPS (all major hosts do this by
-   default) — `NODE_ENV=production` makes cookies `secure`, so login
-   won't work over plain HTTP.
-4. If the platform's disk isn't persistent (e.g. some serverless/container
-   platforms reset the filesystem on redeploy), `data/content.json` and
-   `public/uploads/` need a persistent volume/disk add-on, or the content
-   will reset on every deploy. Render, Railway, and a plain VPS all support
-   persistent disks; check your provider's docs.
-5. Deploy, then log in at `https://your-domain/admin` and change the
-   password immediately (`npm run hash-password` locally, paste the new
-   hash into the platform's environment variables).
+The app runs as a Docker container on Fly.io (app name `mortda-cv`, region
+`jnb` / Johannesburg — closest to Durban). Content and uploads are stored on
+a mounted persistent volume (`cv_data`, 1GB, mounted at `/data` via
+`DATA_DIR`), so admin edits survive redeploys and restarts — see
+`lib/paths.js` for the seed-on-first-boot logic that copies the baseline
+`data/content.json` and `public/uploads/profile.*` onto a fresh volume.
 
-I didn't deploy this for you since it needs your own hosting account and
-credentials — happy to walk through a specific provider (Render, Railway,
-etc.) if you tell me which one you'd like to use.
+Fly.io config lives in `fly.toml`. Production secrets (`SESSION_SECRET`,
+`ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`) are set via `fly secrets set`, not
+committed to git — they're separate from the values in your local `.env`
+(a fresh `SESSION_SECRET` was generated for production).
+
+### Deploying a change
+
+```bash
+git add -A && git commit -m "..." && git push
+fly deploy --app mortda-cv
+```
+
+`fly deploy` builds the Docker image from your local working directory and
+ships it — it doesn't pull from GitHub automatically, so push to GitHub for
+history/backup and run `fly deploy` separately to actually update the live
+site.
+
+### Useful commands
+
+```bash
+fly logs --app mortda-cv              # tail production logs
+fly status --app mortda-cv            # machine/deploy status
+fly ssh console --app mortda-cv       # shell into the running machine
+fly secrets list --app mortda-cv      # see which secrets are set (not their values)
+```
+
+### Changing the production admin password
+
+```bash
+npm run hash-password -- "your-new-password"
+fly secrets set ADMIN_PASSWORD_HASH='<the hash it prints>' --app mortda-cv
+```
+This triggers a new deploy automatically to apply the secret.
+
+### If you ever move off Fly.io
+
+The app is a normal Node.js app and will run anywhere Node runs (Render,
+Railway, a VPS). The only Fly-specific pieces are `fly.toml` and the
+`DATA_DIR` env var pointing at a persistent volume — set `DATA_DIR` to
+wherever your new host's persistent disk is mounted, and everything else
+(Dockerfile, server.js) works unchanged.
