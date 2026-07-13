@@ -73,8 +73,8 @@ your public CV.
 
 Profile photo, name, title, bio, contact info, education, work experience
 (with per-role bullet points and modules), publications, projects, skills,
-conferences, and professional memberships — all from one form, no code
-edits required.
+conferences, professional memberships, and certifications — all from one
+form, no code edits required.
 
 ## Security measures in place
 
